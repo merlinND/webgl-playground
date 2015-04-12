@@ -14,10 +14,18 @@
 
   <!-- WebGL vertex shader -->
   <script id="2d-vertex-shader" type="x-shader/x-vertex">
+    /** Horizontal and vertical resolution (width, height of the canvas) */
+    uniform vec2 u_resolution;
+    /** Position of a given vertex */
     attribute vec2 a_position;
 
+    vec2 toClipSpace(vec2 vectorInPixels) {
+      vec2 scaled = vectorInPixels / u_resolution;
+      return (scaled * 2.0) - 1.0;
+    }
+
     void main() {
-      gl_Position = vec4(a_position, 0, 1);
+      gl_Position = vec4(toClipSpace(a_position), 0, 1);
     }
   </script>
 
