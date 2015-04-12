@@ -295,7 +295,7 @@
     var shaderType;
     var shaderScript = document.getElementById(scriptId);
     if (!shaderScript) {
-      throw ("*** Error: unknown script element" + scriptId);
+      throw ("*** Error: unknown script element " + scriptId);
     }
     shaderSource = shaderScript.text;
 
