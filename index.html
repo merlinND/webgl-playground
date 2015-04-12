@@ -31,8 +31,11 @@
 
   <!-- WebGL fragment shader -->
   <script id="2d-fragment-shader" type="x-shader/x-fragment">
+    precision mediump float;
+    uniform vec4 u_color;
+
     void main() {
-      gl_FragColor = vec4(0.3, 0.3, 0.7, 1);
+      gl_FragColor = u_color;
     }
   </script>
 
